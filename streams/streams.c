@@ -18,7 +18,7 @@ homepage: http://wordpress.fx-world.org
 #include "bufstream.inc"
 
 
-#ifdef _PSP
+#ifdef __PSP__
 void* memcpy_vfpu( void* dst, void* src, unsigned int size )
 {
 	u8* src8 = (u8*)src;
@@ -352,12 +352,12 @@ bytecopy:
 	
 	return (dst);
 }
-#else // _PSP
+#else // __PSP__
 void* memcpy_vfpu( void* dst, void* src, unsigned int size )
 {
 	return memcpy( dst, src, size );
 }
-#endif // _PSP
+#endif // __PSP__
 
 
 stream* stream_fopen( char* name, long flags )
@@ -370,7 +370,7 @@ stream* stream_fopen( char* name, long flags )
 	s->_stream->mode &= flags;
 	
 	fstream* f = (fstream*)s->_stream;
-	#ifdef _PSP
+	#ifdef __PSP__
 	f->fd = sceIoOpen( name, s->_stream->mode, 0777 );
 	if (f->fd<0)
 	#else

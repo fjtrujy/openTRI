@@ -2,7 +2,7 @@ TARGET_LIB = libtri.a
 OBJS = streams/streams.o triArchive.o triTexman.o triCamera.o triVAlloc.o triMemory.o triRefcount.o triImage.o rle.o triGraphics.o tri3d.o triLog.o triModel.o triInput.o triVMath_vfpu.o triTimer.o triWav.o triAt3.o triAudioLib.o triError.o triConsole.o triFont.o triHeap.o triNet.o triParticle.o
 
 INCDIR = 
-CFLAGS = -O3 -G0 -Wall -D__PSP__
+CFLAGS = -O3 -Wall -D__PSP__
 CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
 ASFLAGS = $(CFLAGS)
 
@@ -19,10 +19,8 @@ ifeq ($(PNG),1)
 endif
 
 ifeq ($(FT),1)
-	PSPBIN = $(shell psp-config --psp-prefix)
-
-	CFLAGS += -DTRI_SUPPORT_FT $(shell $(PSPBIN)/bin/freetype-config --cflags)
-	LDFLAGS += -lfreetype $(shell $(PSPBIN)/bin/freetype-config --libs)
+	CFLAGS += -DTRI_SUPPORT_FT $(shell psp-pkgconf --cflags freetype2)
+	LDFLAGS += -lfreetype $(shell psp-pkgconf --libs freetype2)
 endif
 
 PSPSDK=$(shell psp-config --pspsdk-path)

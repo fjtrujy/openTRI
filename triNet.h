@@ -27,7 +27,6 @@
 
 #include <psputility.h>
 #include <netinet/in.h>
-#include <sys/fd_set.h>
 
 #include "triTypes.h"
 

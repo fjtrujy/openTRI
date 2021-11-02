@@ -1,14 +1,12 @@
 TARGET = fonttest
 OBJS = fonttest.o ../../streams/streams.o ../../triVAlloc.o ../../triMemory.o ../../triRefcount.o ../../triImage.o ../../rle.o ../../triGraphics.o ../../triLog.o ../../triFont.o
 
-PSPBIN = $(shell psp-config --psp-prefix)
-
 INCDIR = 
-CFLAGS = -O0 -G0 -Wall -g -DDEBUG -D_DEBUG -D_DEBUG_LOG -D_DEBUG_MEMORY -DTRI_SUPPORT_FT $(shell $(PSPBIN)/bin/freetype-config --cflags)
+CFLAGS = -O0 -G0 -Wall -g -DDEBUG -D_DEBUG -D_DEBUG_LOG -D_DEBUG_MEMORY -DTRI_SUPPORT_FT $(shell psp-pkgconf --cflags freetype2)
 CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
 ASFLAGS = $(CFLAGS)
 
-LIBS = -lpspgum -lpspgu -lpsprtc -lfreetype -lm -lz $(shell $(PSPBIN)/bin/freetype-config --libs)
+LIBS = -lpspgum -lpspgu -lpsprtc -lfreetype -lm -lz $(shell psp-pkgconf --libs freetype2)
 
 BUILD_PRX = 1
 
