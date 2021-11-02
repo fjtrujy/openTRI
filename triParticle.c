@@ -1535,31 +1535,31 @@ triS32 triParticleManagerLoadScript( triChar* name )
 		triLogPrint("Parsing line> '%s'\n", buffer);
 		if (sscanf( buffer, "%s: ", temp )==1)
 		{
-			if (stricmp(temp,"pos:")==0)
+			if (strcmp(temp,"pos:")==0)
 				sscanf( buffer+strlen(temp)+1, "(%f, %f, %f, %f)", &e->pos.x, &e->pos.y, &e->pos.z, &e->pos.w );
 			else
-			if (stricmp(temp,"posRand:")==0)
+			if (strcmp(temp,"posRand:")==0)
 				sscanf( buffer+strlen(temp)+1, "(%f, %f, %f, %f)", &e->posRand.x, &e->posRand.y, &e->posRand.z, &e->posRand.w );
 			else
-			if (stricmp(temp,"vel:")==0)
+			if (strcmp(temp,"vel:")==0)
 				sscanf( buffer+strlen(temp)+1, "(%f, %f, %f, %f)", &e->vel.x, &e->vel.y, &e->vel.z, &e->vel.w );
 			else
-			if (stricmp(temp,"velRand:")==0)
+			if (strcmp(temp,"velRand:")==0)
 				sscanf( buffer+strlen(temp)+1, "(%f, %f, %f, %f)", &e->velRand.x, &e->velRand.y, &e->velRand.z, &e->velRand.w );
 			else
-			if (stricmp(temp,"gravity:")==0)
+			if (strcmp(temp,"gravity:")==0)
 				sscanf( buffer+strlen(temp)+1, "(%f, %f, %f, %f)", &e->gravity.x, &e->gravity.y, &e->gravity.z, &e->gravity.w );
 			else
-			if (stricmp(temp,"wind:")==0)
+			if (strcmp(temp,"wind:")==0)
 				sscanf( buffer+strlen(temp)+1, "(%f, %f, %f, %f)", &e->wind.x, &e->wind.y, &e->wind.z, &e->wind.w );
 			else
-			if (stricmp(temp,"windRand:")==0)
+			if (strcmp(temp,"windRand:")==0)
 				sscanf( buffer+strlen(temp)+1, "(%f, %f, %f, %f)", &e->windRand.x, &e->windRand.y, &e->windRand.z, &e->windRand.w );
 			else
-			if (stricmp(temp,"numCols:")==0)
+			if (strcmp(temp,"numCols:")==0)
 				sscanf( buffer+strlen(temp)+1, "%d", (int*)&e->numCols );
 			else
-			if (stricmp(temp,"cols:")==0)
+			if (strcmp(temp,"cols:")==0)
 			{
 				tbuffer = buffer + strlen(temp) + 2;
 				for (i=0;i<e->numCols;i++)
@@ -1569,239 +1569,239 @@ triS32 triParticleManagerLoadScript( triChar* name )
 				}
 			}
 			else
-			if (stricmp(temp,"size:")==0)
+			if (strcmp(temp,"size:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->size );
 			else
-			if (stricmp(temp,"sizeRand:")==0)
+			if (strcmp(temp,"sizeRand:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->sizeRand );
 			else
-			if (stricmp(temp,"growth:")==0)
+			if (strcmp(temp,"growth:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->growth );
 			else
-			if (stricmp(temp,"glitter:")==0)
+			if (strcmp(temp,"glitter:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->glitter );
 			else
-			if (stricmp(temp,"glitterSpeed:")==0)
+			if (strcmp(temp,"glitterSpeed:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->glitterSpeed );
 			else
-			if (stricmp(temp,"life:")==0)
+			if (strcmp(temp,"life:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->life );
 			else
-			if (stricmp(temp,"lifeRand:")==0)
+			if (strcmp(temp,"lifeRand:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->lifeRand );
 			else
-			if (stricmp(temp,"vTexFrames:")==0)
+			if (strcmp(temp,"vTexFrames:")==0)
 				sscanf( buffer+strlen(temp)+1, "%d", (int*)&e->vTexFrames );
 			else
-			if (stricmp(temp,"hTexFrames:")==0)
+			if (strcmp(temp,"hTexFrames:")==0)
 				sscanf( buffer+strlen(temp)+1, "%d", (int*)&e->hTexFrames );
 			else
-			if (stricmp(temp,"nTexLoops:")==0)
+			if (strcmp(temp,"nTexLoops:")==0)
 				sscanf( buffer+strlen(temp)+1, "%d", (int*)&e->nTexLoops );
 			else
-			if (stricmp(temp,"fixedTexRate:")==0)
+			if (strcmp(temp,"fixedTexRate:")==0)
 				sscanf( buffer+strlen(temp)+1, "%d", (int*)&e->fixedTexRate );
 			else
-			if (stricmp(temp,"burnout:")==0)
+			if (strcmp(temp,"burnout:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->burnout );
 			else
-			if (stricmp(temp,"friction:")==0)
+			if (strcmp(temp,"friction:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->friction );
 			else
-			if (stricmp(temp,"loosen:")==0)
+			if (strcmp(temp,"loosen:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->loosen );
 			else
-			if (stricmp(temp,"max:")==0)
+			if (strcmp(temp,"max:")==0)
 				sscanf( buffer+strlen(temp)+1, "%d", (int*)&e->max );
 			else
-			if (stricmp(temp,"maxVortex:")==0)
+			if (strcmp(temp,"maxVortex:")==0)
 				sscanf( buffer+strlen(temp)+1, "%d", (int*)&e->maxVortex );
 			else
-			if (stricmp(temp,"vortexRange:")==0)
+			if (strcmp(temp,"vortexRange:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->vortexRange );
 			else
-			if (stricmp(temp,"rate:")==0)
+			if (strcmp(temp,"rate:")==0)
 				sscanf( buffer+strlen(temp)+1, "%d", (int*)&e->rate );
 			else
-			if (stricmp(temp,"rateVortex:")==0)
+			if (strcmp(temp,"rateVortex:")==0)
 				sscanf( buffer+strlen(temp)+1, "%d", (int*)&e->rateVortex );
 			else
-			if (stricmp(temp,"lifetime:")==0)
+			if (strcmp(temp,"lifetime:")==0)
 				sscanf( buffer+strlen(temp)+1, "%f", &e->lifetime );
 			else
-			if (stricmp(temp,"op:")==0)
+			if (strcmp(temp,"op:")==0)
 			{
 				sscanf( buffer+strlen(temp)+1, "%s", temp );
-				if (stricmp(temp,"GU_ADD")==0)
+				if (strcmp(temp,"GU_ADD")==0)
 					p->blendMode.op = GU_ADD;
 				else
-				if (stricmp(temp,"GU_SUBTRACT")==0)
+				if (strcmp(temp,"GU_SUBTRACT")==0)
 					p->blendMode.op = GU_SUBTRACT;
 				else
-				if (stricmp(temp,"GU_REVERSE_SUBTRACT")==0)
+				if (strcmp(temp,"GU_REVERSE_SUBTRACT")==0)
 					p->blendMode.op = GU_REVERSE_SUBTRACT;
 				else
-				if (stricmp(temp,"GU_MIN")==0)
+				if (strcmp(temp,"GU_MIN")==0)
 					p->blendMode.op = GU_MIN;
 				else
-				if (stricmp(temp,"GU_MAX")==0)
+				if (strcmp(temp,"GU_MAX")==0)
 					p->blendMode.op = GU_MAX;
 				else
-				if (stricmp(temp,"GU_ABS")==0)
+				if (strcmp(temp,"GU_ABS")==0)
 					p->blendMode.op = GU_ABS;
 			}
 			else
-			if (stricmp(temp,"src_op:")==0)
+			if (strcmp(temp,"src_op:")==0)
 			{
 				sscanf( buffer+strlen(temp)+1, "%s", temp );
-				if (stricmp(temp,"GU_SRC_COLOR")==0)
+				if (strcmp(temp,"GU_SRC_COLOR")==0)
 					p->blendMode.src_op = GU_SRC_COLOR;
 				else
-				if (stricmp(temp,"GU_ONE_MINUS_SRC_COLOR")==0)
+				if (strcmp(temp,"GU_ONE_MINUS_SRC_COLOR")==0)
 					p->blendMode.src_op = GU_ONE_MINUS_SRC_COLOR;
 				else
-				if (stricmp(temp,"GU_SRC_ALPHA")==0)
+				if (strcmp(temp,"GU_SRC_ALPHA")==0)
 					p->blendMode.src_op = GU_SRC_ALPHA;
 				else
-				if (stricmp(temp,"GU_ONE_MINUS_SRC_ALPHA")==0)
+				if (strcmp(temp,"GU_ONE_MINUS_SRC_ALPHA")==0)
 					p->blendMode.src_op = GU_ONE_MINUS_SRC_ALPHA;
 				else
-				if (stricmp(temp,"GU_DST_COLOR")==0)
+				if (strcmp(temp,"GU_DST_COLOR")==0)
 					p->blendMode.src_op = GU_DST_COLOR;
 				else
-				if (stricmp(temp,"GU_ONE_MINUS_DST_COLOR")==0)
+				if (strcmp(temp,"GU_ONE_MINUS_DST_COLOR")==0)
 					p->blendMode.src_op = GU_ONE_MINUS_DST_COLOR;
 				else
-				if (stricmp(temp,"GU_DST_ALPHA")==0)
+				if (strcmp(temp,"GU_DST_ALPHA")==0)
 					p->blendMode.src_op = GU_DST_ALPHA;
 				else
-				if (stricmp(temp,"GU_ONE_MINUS_DST_ALPHA")==0)
+				if (strcmp(temp,"GU_ONE_MINUS_DST_ALPHA")==0)
 					p->blendMode.src_op = GU_ONE_MINUS_DST_ALPHA;
 				else
-				if (stricmp(temp,"GU_FIX")==0)
+				if (strcmp(temp,"GU_FIX")==0)
 					p->blendMode.src_op = GU_FIX;
 			}
 			else
-			if (stricmp(temp,"dst_op:")==0)
+			if (strcmp(temp,"dst_op:")==0)
 			{
 				sscanf( buffer+strlen(temp)+1, "%s", temp );
-				if (stricmp(temp,"GU_SRC_COLOR")==0)
+				if (strcmp(temp,"GU_SRC_COLOR")==0)
 					p->blendMode.dst_op = GU_SRC_COLOR;
 				else
-				if (stricmp(temp,"GU_ONE_MINUS_SRC_COLOR")==0)
+				if (strcmp(temp,"GU_ONE_MINUS_SRC_COLOR")==0)
 					p->blendMode.dst_op = GU_ONE_MINUS_SRC_COLOR;
 				else
-				if (stricmp(temp,"GU_SRC_ALPHA")==0)
+				if (strcmp(temp,"GU_SRC_ALPHA")==0)
 					p->blendMode.dst_op = GU_SRC_ALPHA;
 				else
-				if (stricmp(temp,"GU_ONE_MINUS_SRC_ALPHA")==0)
+				if (strcmp(temp,"GU_ONE_MINUS_SRC_ALPHA")==0)
 					p->blendMode.dst_op = GU_ONE_MINUS_SRC_ALPHA;
 				else
-				if (stricmp(temp,"GU_DST_COLOR")==0)
+				if (strcmp(temp,"GU_DST_COLOR")==0)
 					p->blendMode.dst_op = GU_DST_COLOR;
 				else
-				if (stricmp(temp,"GU_ONE_MINUS_DST_COLOR")==0)
+				if (strcmp(temp,"GU_ONE_MINUS_DST_COLOR")==0)
 					p->blendMode.dst_op = GU_ONE_MINUS_DST_COLOR;
 				else
-				if (stricmp(temp,"GU_DST_ALPHA")==0)
+				if (strcmp(temp,"GU_DST_ALPHA")==0)
 					p->blendMode.dst_op = GU_DST_ALPHA;
 				else
-				if (stricmp(temp,"GU_ONE_MINUS_DST_ALPHA")==0)
+				if (strcmp(temp,"GU_ONE_MINUS_DST_ALPHA")==0)
 					p->blendMode.dst_op = GU_ONE_MINUS_DST_ALPHA;
 				else
-				if (stricmp(temp,"GU_FIX")==0)
+				if (strcmp(temp,"GU_FIX")==0)
 					p->blendMode.dst_op = GU_FIX;
 			}
 			else
-			if (stricmp(temp,"src_fix:")==0)
+			if (strcmp(temp,"src_fix:")==0)
 				sscanf( buffer+strlen(temp)+1, "%X", (unsigned int*)&p->blendMode.src_fix );
 			else
-			if (stricmp(temp,"dst_fix:")==0)
+			if (strcmp(temp,"dst_fix:")==0)
 				sscanf( buffer+strlen(temp)+1, "%X", (unsigned int*)&p->blendMode.dst_fix );
 			else
-			if (stricmp(temp,"emitter:")==0)
+			if (strcmp(temp,"emitter:")==0)
 			{
 				sscanf( buffer+strlen(temp)+1, "%s", temp );
-				if (stricmp(temp,"FIRE")==0)
+				if (strcmp(temp,"FIRE")==0)
 					triParticleEmitterConstructor( e, TRI_EMITTER_FIRE );
 				else
-				if (stricmp(temp,"EXPLOSION")==0)
+				if (strcmp(temp,"EXPLOSION")==0)
 					triParticleEmitterConstructor( e, TRI_EMITTER_EXPLOSION );
 				else
-				if (stricmp(temp,"SPRINKLE")==0)
+				if (strcmp(temp,"SPRINKLE")==0)
 					triParticleEmitterConstructor( e, TRI_EMITTER_SPRINKLE );
 				else
-				if (stricmp(temp,"WATERFALL")==0)
+				if (strcmp(temp,"WATERFALL")==0)
 					triParticleEmitterConstructor( e, TRI_EMITTER_WATERFALL );
 				else
-				if (stricmp(temp,"SMOKE")==0)
+				if (strcmp(temp,"SMOKE")==0)
 					triParticleEmitterConstructor( e, TRI_EMITTER_SMOKE );
 			}
 			else
-			if (stricmp(temp,"texture:")==0)
+			if (strcmp(temp,"texture:")==0)
 			{
 				sscanf( buffer+strlen(temp)+1, "%s", temp );
 				p->textureID = triTextureLoad( temp );
 				triLogPrint("Loaded texture '%s' as ID %i\n", temp, p->textureID );
 			}
 			else
-			if (stricmp(temp,"texMode:")==0)
+			if (strcmp(temp,"texMode:")==0)
 			{
 				sscanf( buffer+strlen(temp)+1, "%s", temp );
-				if (stricmp(temp,"GU_TFX_MODULATE")==0)
+				if (strcmp(temp,"GU_TFX_MODULATE")==0)
 					p->texMode = GU_TFX_MODULATE;
 				else
-				if (stricmp(temp,"GU_TFX_DECAL")==0)
+				if (strcmp(temp,"GU_TFX_DECAL")==0)
 					p->texMode = GU_TFX_DECAL;
 				else
-				if (stricmp(temp,"GU_TFX_BLEND")==0)
+				if (strcmp(temp,"GU_TFX_BLEND")==0)
 					p->texMode = GU_TFX_BLEND;
 				else
-				if (stricmp(temp,"GU_TFX_REPLACE")==0)
+				if (strcmp(temp,"GU_TFX_REPLACE")==0)
 					p->texMode = GU_TFX_REPLACE;
 				else
-				if (stricmp(temp,"GU_TFX_ADD")==0)
+				if (strcmp(temp,"GU_TFX_ADD")==0)
 					p->texMode = GU_TFX_ADD;
 			}
 			else
-			if (stricmp(temp,"renderMode:")==0)
+			if (strcmp(temp,"renderMode:")==0)
 			{
 				sscanf( buffer+strlen(temp)+1, "%s", temp );
-				if (stricmp(temp,"GU_POINTS")==0)
+				if (strcmp(temp,"GU_POINTS")==0)
 					p->renderMode = GU_POINTS;
 				else
-				if (stricmp(temp,"GU_LINES")==0)
+				if (strcmp(temp,"GU_LINES")==0)
 					p->renderMode = GU_LINES;
 				else
-				if (stricmp(temp,"GU_SPRITES")==0)
+				if (strcmp(temp,"GU_SPRITES")==0)
 					p->renderMode = GU_SPRITES;
 				else
-				if (stricmp(temp,"GU_TRIANGLES")==0)
+				if (strcmp(temp,"GU_TRIANGLES")==0)
 					p->renderMode = GU_TRIANGLES;
 			}
 			else
-			if (stricmp(temp,"texColor:")==0)
+			if (strcmp(temp,"texColor:")==0)
 				sscanf( buffer+strlen(temp)+1, "%X", (unsigned int*)&p->texColor );
 			else
-			if (stricmp(temp,"blendMode:")==0)
+			if (strcmp(temp,"blendMode:")==0)
 			{
 				sscanf( buffer+strlen(temp)+1, "%s", temp );
-				if (stricmp(temp,"ALPHA")==0)
+				if (strcmp(temp,"ALPHA")==0)
 					p->blendMode = TRI_BLEND_MODE_ALPHA;
 				else
-				if (stricmp(temp,"ADD")==0)
+				if (strcmp(temp,"ADD")==0)
 					p->blendMode = TRI_BLEND_MODE_ADD;
 				else
-				if (stricmp(temp,"GLENZ")==0)
+				if (strcmp(temp,"GLENZ")==0)
 					p->blendMode = TRI_BLEND_MODE_GLENZ;
 				else
-				if (stricmp(temp,"ALPHA_ADD")==0)
+				if (strcmp(temp,"ALPHA_ADD")==0)
 					p->blendMode = TRI_BLEND_MODE_ALPHA_ADD;
 				else
-				if (stricmp(temp,"SUB")==0)
+				if (strcmp(temp,"SUB")==0)
 					p->blendMode = TRI_BLEND_MODE_SUB;
 				else
-				if (stricmp(temp,"ALPHA_SUB")==0)
+				if (strcmp(temp,"ALPHA_SUB")==0)
 					p->blendMode = TRI_BLEND_MODE_ALPHA_SUB;
 			}
 			else
