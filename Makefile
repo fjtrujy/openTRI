@@ -19,8 +19,8 @@ ifeq ($(PNG),1)
 endif
 
 ifeq ($(FT),1)
-	CFLAGS += -DTRI_SUPPORT_FT $(shell psp-pkgconf --cflags freetype2)
-	LDFLAGS += -lfreetype $(shell psp-pkgconf --libs freetype2)
+	CFLAGS += -DTRI_SUPPORT_FT $(shell psp-pkg-config --cflags freetype2)
+	LDFLAGS += -lfreetype $(shell psp-pkg-config --libs freetype2)
 endif
 
 PSPSDK=$(shell psp-config --pspsdk-path)
