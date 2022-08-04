@@ -2005,8 +2005,8 @@ triVec4f* triVec4Cross(triVec4f* a, const triVec4f* b, const triVec4f* c)
 		".set			noreorder\n"			// suppress reordering
 		"lv.q			c010, %1\n"				// c010 = *b
 		"lv.q			c020, %2\n"				// c020 = *c
-		"vcrsp.t		c010, c010, c020\n"		// c010 = c010 x c020
-		"sv.q			c010, %0\n"				// *a = s010
+		"vcrsp.t		c000, c010, c020\n"		// c000 = c010 x c020
+		"sv.q			c000, %0\n"				// *a = s010
 		".set			pop\n"					// restore assember option
 		: "=m"(*a)
 		: "m"(*b), "m"(*c)
