@@ -27,6 +27,7 @@
 #include <string.h>
 #include <zlib.h>
 #include <pspgum.h>
+#include <psputils.h>
 #include "triTypes.h"
 #include "triMemory.h"
 #include "triLog.h"
