@@ -172,22 +172,23 @@ triVoid triNetDisconnect()
 
 triBool triNetIsConnected()
 {
-        triChar szMyIPAddr[32];
-
-        if (sceNetApctlGetInfo(8, szMyIPAddr) != 0)
+		union SceNetApctlInfo info;
+        if (sceNetApctlGetInfo(8, &info) != 0)
 		return(0);
 		
-	triLogPrint("triNet: Local IP is %s\r\n", szMyIPAddr);
+	triLogPrint("triNet: Local IP is %s\r\n", info.ip);
 
         return(1);
 }
 
 triBool triNetGetLocalIp(char *buffer)
 {
-        if (sceNetApctlGetInfo(8, buffer) != 0)
+		union SceNetApctlInfo info;
+
+        if (sceNetApctlGetInfo(8, &info) != 0)
 		return(0);
 		
-	triLogPrint("triNet: Local IP is %s\r\n", buffer);
+	triLogPrint("triNet: Local IP is %s\r\n", info.ip);
 
         return(1);
 }
@@ -230,7 +231,7 @@ triSocket triNetSocketAccept(triSocket socket)
 	
 	struct sockaddr_in client;
 
-	size_t size;
+	socklen_t size = sizeof(client);
 
 	sock = accept(socket, (struct sockaddr *) &client, &size);
 	
