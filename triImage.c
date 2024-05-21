@@ -596,7 +596,7 @@ static triChar* _triImageLoadPngStream( stream* s, triImage *img )
 			
 			png_colorp palette = NULL;
 			png_bytep trans = NULL;
-			triS32 num_palette = 0;
+			int num_palette = 0;
 			int num_trans = 0;
 			png_color_16p trans_values; // for non-PLTE triImages
 			png_get_PLTE(png_ptr, info_ptr, &palette, &num_palette);
